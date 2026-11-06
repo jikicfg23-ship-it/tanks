@@ -34,7 +34,7 @@ class Tank {
 const p1 = new Tank(285, 820, "#2e7d32", 1);
 const p2 = new Tank(285, 50, "#c62828", 2);
 
-// ربط أزرار الحركة باللمس مع معالجة اتجاهات اللاعب الثاني المقلوب
+// ربط أزرار الحركة باللمس الفوري
 function setupKey(btnId, logicalKey) {
     const btn = document.getElementById(btnId);
     if (!btn) return;
@@ -42,17 +42,17 @@ function setupKey(btnId, logicalKey) {
     btn.ontouchend = (e) => { e.preventDefault(); keys[logicalKey] = false; };
 }
 
-// أزرار اللاعب الأول (الأخضر - اتجاهات طبيعية)
+// أزرار اللاعب الأول (الأخضر)
 setupKey("p1Up", "p1Up");
 setupKey("p1Down", "p1Down");
 setupKey("p1Left", "p1Left");
 setupKey("p1Right", "p1Right");
 
-// أزرار اللاعب الثاني (الأحمر - يتم عكس الحركة برمجياً لأن الحاوية مقلوبة 180 درجة CSS)
-setupKey("p2Up", "p2Down");   
-setupKey("p2Down", "p2Up");   
-setupKey("p2Left", "p2Right"); 
-setupKey("p2Right", "p2Left"); 
+// أزرار اللاعب الثاني (الأحمر) - جعلناها طبيعية تماماً لأن الـ CSS يقلب الاتجاه مرئياً للاعب
+setupKey("p2Up", "p2Up");
+setupKey("p2Down", "p2Down");
+setupKey("p2Left", "p2Left");
+setupKey("p2Right", "p2Right");
 
 // تفعيل أزرار النار باللمس الفوري للتابلت
 document.getElementById("p1Fire").ontouchstart = (e) => { e.preventDefault(); shoot(p1); };
