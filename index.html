@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>تحدي الدبابات للتابلت</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="winScreen" class="hidden">
+        <div class="modal">
+            <h1 id="winMessage">لاعب فاز!</h1>
+            <button id="restartBtn">إعادة اللعب</button>
+        </div>
+    </div>
+
+    <!-- لاعب 2 (أعلى التابلت) -->
+    <div class="player-zone p2-zone">
+        <button class="fire-btn red-fire" id="p2Fire">🔥</button>
+        <div class="d-pad">
+            <button id="p2Up">▲</button>
+            <div class="side-btns">
+                <button id="p2Left">◀</button>
+                <button id="p2Right">▶</button>
+            </div>
+            <button id="p2Down">▼</button>
+        </div>
+    </div>
+
+    <!-- مساحة اللعب الكبيرة -->
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- لاعب 1 (أسفل التابلت) -->
+    <div class="player-zone p1-zone">
+        <div class="d-pad">
+            <button id="p1Up">▲</button>
+            <div class="side-btns">
+                <button id="p1Left">◀</button>
+                <button id="p1Right">▶</button>
+            </div>
+            <button id="p1Down">▼</button>
+        </div>
+        <button class="fire-btn green-fire" id="p1Fire">🔥</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
